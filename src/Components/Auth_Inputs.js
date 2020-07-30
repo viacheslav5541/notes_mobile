@@ -27,13 +27,13 @@ export default class Auth_Inputs extends Component {
         return (
             <View>
                 <TextInput
-                    style={{height: 40, borderColor: this.props.authStore.loginError || this.props.authStore.registerError ? 'red' : 'blue', borderBottomWidth: 0.5, margin:20, alignSelf: 'stretch'}}
+                    style={{ height: 40, borderColor: this.props.authStore.loginError || this.props.authStore.registerError ? 'red' : 'blue', borderBottomWidth: 0.5, margin:20, alignSelf: 'stretch' }}
                     placeholder='Логин'
                     value={this.props.authStore.values.email}
                     onChangeText={text => this.props.authStore.setEmail(text)}
                 />
                 <TextInput
-                    style={{height: 40,borderColor: this.props.authStore.loginError || this.props.authStore.registerError ? 'red' : 'blue', borderBottomWidth: 0.5, margin: 20, alignSelf: 'stretch'}}
+                    style={{ height: 40,borderColor: this.props.authStore.loginError || this.props.authStore.registerError ? 'red' : 'blue', borderBottomWidth: 0.5, margin: 20, alignSelf: 'stretch' }}
                     secureTextEntry={true}
                     placeholder='Пароль'
                     numberOfLines={4}

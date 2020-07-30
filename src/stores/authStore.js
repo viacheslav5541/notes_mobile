@@ -20,7 +20,6 @@ class AuthStore {
     }
 
     @action setPassword(password) {
-      console.log(password)
       this.values.password = password;
     }
 
@@ -33,7 +32,7 @@ class AuthStore {
     @action login() {
       this.inProgress = true;
       this.errors = undefined;
-      return axios.post('http://localhost:3000/api/Users/login',{email: this.values.email, password: this.values.password})
+      return axios.post('http://localhost:3000/api/Users/login',{ email: this.values.email, password: this.values.password })
         .then((res) => commonStore.setToken(res.data.id))
         .then(action(() => {
           this.isLogined = true; 
@@ -44,13 +43,13 @@ class AuthStore {
             this.loginError = 'Неверный логин или пароль'
           } else this.loginError = 'Ошибка соединения с сервером'
         }))
-        .finally(action(() => { this.inProgress = false;}));
+        .finally(action(() => this.inProgress = false));
     }
 
     @action register() {
       this.inProgress = true;
       this.errors = undefined;
-      return axios.post('http://localhost:3000/api/Users', {email: this.values.email, password: this.values.password})
+      return axios.post('http://localhost:3000/api/Users', { email: this.values.email, password: this.values.password })
         .then(action(() => {
           this.registerError = null;
           this.values.password = '';

@@ -75,14 +75,14 @@ export default class Edit_Note extends Component {
         return (
             <Modal animationType='slide' visible={this.props.visible}>
                 <Modal animationType='slide' transparent={true} visible={this.state.isGoingBack}>
-                    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                        <View style={{backgroundColor: 'yellow', padding: 20, borderRadius: 10, borderWidth: 1, borderColor: 'grey'}}>
-                            <Text style={{fontWeight: 'bold'}}>Выйти без сохранения?</Text>
-                            <View style={{flexDirection: 'row', justifyContent: 'space-around', marginTop: 20}}>
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                        <View style={{ backgroundColor: 'yellow', padding: 20, borderRadius: 10, borderWidth: 1, borderColor: 'grey' }}>
+                            <Text style={{ fontWeight: 'bold' }}>Выйти без сохранения?</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 20 }}>
                                 <TouchableOpacity onPress={() => this.setState({isGoingBack: false}, () => {this.props.closeModal()})}>
                                     <Text>Да</Text>
                                 </TouchableOpacity>
-                                <View style={{width: 1, borderColor:'black', borderWidth: 1}}></View>
+                                <View style={{ width: 1, borderColor:'black', borderWidth: 1 }}></View>
                                 <TouchableOpacity 
                                     onPress={() => {
                                         this.setState({isGoingBack: false})
@@ -94,35 +94,35 @@ export default class Edit_Note extends Component {
                         </View>
                     </View>
                 </Modal>
-                <View style={{flex: 1, backgroundColor: 'white', justifyContent: 'flex-start', alignItems: 'center'}}>
-                        <View style={{flex: 1}}>
-                            <View style={{flex: 1, borderBottomWidth: 1, borderColor: 'grey', flexDirection: 'row', justifyContent: 'space-between', alignItems:'flex-end', width: d_width - 60, margin: 10}}>
+                <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'flex-start', alignItems: 'center' }}>
+                        <View style={{ flex: 1 }}>
+                            <View style={{ flex: 1, borderBottomWidth: 1, borderColor: 'grey', flexDirection: 'row', justifyContent: 'space-between', alignItems:'flex-end', width: d_width - 60, margin: 10 }}>
                                 <TouchableOpacity 
                                     onPress={() => this.handleBackButton()} 
-                                    style={{position: 'absolute', top: 50,left: 10}}
+                                    style={{ position: 'absolute', top: 50,left: 10 }}
                                 >
                                     <Text>
                                         Назад
                                     </Text>
                                 </TouchableOpacity>
                                 <TextInput
-                                    style={{flex: 1, fontSize: 15,marginBottom: 10}}
+                                    style={{ flex: 1, fontSize: 15,marginBottom: 10 }}
                                     secureTextEntry={false}
                                     placeholder='Заголовок'
                                     value={this.state.title}
                                     onChangeText={(text) => this.setState({title: text})}
                                 />
-                                <TouchableOpacity onPress={() => this.handleSendButton()} style={{position: 'absolute', top: 50, right: 10}}>
+                                <TouchableOpacity onPress={() => this.handleSendButton()} style={{ position: 'absolute', top: 50, right: 10 }}>
                                     <Text>Отправить</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{flex: 6, borderBottomWidth: 1, borderColor: 'grey', flexDirection:'row', justifyContent: 'space-between', alignItems: 'flex-start', width: d_width - 60, margin: 10}}>
+                            <View style={{ flex: 6, borderBottomWidth: 1, borderColor: 'grey', flexDirection:'row', justifyContent: 'space-between', alignItems: 'flex-start', width: d_width - 60, margin: 10 }}>
                                 <TextInput
-                                    style={{flex: 1, fontSize: 15}}
+                                    style={{ flex: 1, fontSize: 15 }}
                                     secureTextEntry={false}
                                     placeholder='Ваша заметка'
                                     value={this.state.body}
-                                    onChangeText={(text) => {this.setState({body: text})}}
+                                    onChangeText={(text) => this.setState({ body: text })}
                                 />
                             </View>
                         </View>

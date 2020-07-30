@@ -38,10 +38,10 @@ export default class Registration extends Component {
 
     render() {
         return (
-            <KeyboardAvoidingView behavior='position' style={{flex: 1, backgroundColor: 'yellow', justifyContent: 'center' ,padding: 20, paddingBottom: 120}}>
+            <KeyboardAvoidingView behavior='position' style={{ flex: 1, backgroundColor: 'yellow', justifyContent: 'center' ,padding: 20, paddingBottom: 120 }}>
                     <View style={{backgroundColor: 'white', padding: 20}}>
                     <Auth_Inputs/>
-                    { this.props.authStore.registerError ? <Text style={{margin:10,color:'red',alignSelf:'center'}}>{this.props.authStore.registerError}</Text> : null }
+                    { this.props.authStore.registerError ? <Text style={{ margin:10,color:'red',alignSelf:'center' }}>{this.props.authStore.registerError}</Text> : null }
                     </View>
                     <TouchableOpacity 
                     onPress={()=>{
@@ -49,12 +49,12 @@ export default class Registration extends Component {
                             !this.props.authStore.registerError ? this.props.navigation.pop() : this.props.authStore.setPassword('');
                         });
                     }} 
-                    style={{alignSelf: 'stretch', height: 40, marginTop: 5, marginBottom: 5, backgroundColor: 'white'}}
+                    style={{ alignSelf: 'stretch', height: 40, marginTop: 5, marginBottom: 5, backgroundColor: 'white' }}
                     >
-                        <Text style={{textAlign: 'center', color: 'blue', marginBottom: 'auto', marginTop: 'auto'}}>Зарегистрироваться</Text>
+                        <Text style={{ textAlign: 'center', color: 'blue', marginBottom: 'auto', marginTop: 'auto' }}>Зарегистрироваться</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.props.navigation.pop()} style={{alignSelf: 'stretch', height:40, marginTop: 5, marginBottom: 5, backgroundColor: 'white'}}>
-                        <Text style={{textAlign: 'center', color: 'blue', marginBottom: 'auto', marginTop: 'auto'}}>Назад</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.pop()} style={{ alignSelf: 'stretch', height:40, marginTop: 5, marginBottom: 5, backgroundColor: 'white' }}>
+                        <Text style={{ textAlign: 'center', color: 'blue', marginBottom: 'auto', marginTop: 'auto' }}>Назад</Text>
                     </TouchableOpacity>
             </KeyboardAvoidingView>
         );

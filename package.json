@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "react": "16.8.6",
